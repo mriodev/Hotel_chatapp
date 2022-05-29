@@ -1,181 +1,133 @@
 * {
-    margin: 0px;
-    padding: 0;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 html {
-    font-family: 'Lato', 'Arial', sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    text-rendering: optimizeLegibility;
+    overflow: scroll;
+    overflow-x: hidden;
 }
+
+
 
 body {
-    background-color: rgb(195, 227, 226);
+    font: normal 16px/1.5 'Libre Franklin', Helvetica, Georgia, sans-serif, serif;
+    background-color: aqua;
+    height: 100vh;
+    background: linear-gradient(#e8e6fd, #fff);
+    background: url("https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg");
+    background-size: cover;
+    background-position: center center;
 }
 
-h1 {
-    color: black;
-    margin-bottom: 0;
-    margin-top: 20;
-    text-align: center;
-    font-size: 40px;
-}
-
-
-.row {
+header {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-    height: auto;
+    justify-content: space-between;
+    padding: 20px 15px;
+    color: #666;
+    background-color: #5E8CEC;
 }
 
-.ml-auto {
-    margin-left: auto !important;
-}
-
-.mr-auto {
-    margin-right: auto !important;
-}
-
-
-.col-md-8 {
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.col-md-8 {
-    flex: 0 0 66.666667%;
-    max-width: 66.666667%
-}
-
-.form-control {
-
-    display: block;
-    width: 100%;
-    padding: .4375rem 0;
-    padding-right: 10px;
-    padding-left: 10px;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    border: solid;
-    background-color: transparent;
-    background-clip: padding-box;
-    height: 100px;
-    box-shadow: none;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    margin-bottom: 10px;
-
-}
-
-.btn {
-    float: left;
-    text-align: center;
-    white-space: nowrap;
+header a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.5em;
     vertical-align: middle;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: .46875rem 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-
 }
 
-.btn-warning {
-    color: #fff;
-    background-color: #f08f00;
-    border-color: #c27400;
+header h3 {
+    color: rgb(255, 255, 255);
+    font-family: poppin;
+    font-size: 20px;
+    text-align: left;
+    line-height: 30px;
 }
-
-.btn.btn-warning:active,
-.btn.btn-warning:focus,
-.btn.btn-warning:hover {
-    box-shadow: 0 14px 26px -12px rgba(255, 152, 0, .42), 0 4px 23px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(255, 152, 0, .2);
-}
-
 
 #chatbox {
-    background-color: cyan;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
     min-height: 300px;
-    margin-top: 60px;
     justify-content: space-between;
     align-items: center;
-    padding-left: 12px;
     font-weight: bold;
     font-size: 22px;
     letter-spacing: 1px;
-}
-
-#userInput {
-    margin-left: 120px;
-    margin-right: auto;
-    width: 60%;
-    margin-top: 40px;
-}
-
-
-
-#buttonInput {
-    padding: 3px;
-    font-family: monospace;
-    font-size: 17px;
+    background-color: #F3F3F3;
+    padding: 10px 20px;
+    width: 100%;
+    height: 450px;
+    overflow-y: scroll;
 }
 
 .userText {
 
-    color: white;
-    font-family: monospace;
-    text-align: right !important;
-
+    background-color: #98abb3;
+    color: #222;
+    font-size: .85em;
+    border-radius: 10px;
+    position: relative;
+    padding: 10px;
+    margin: 1% 0;
+    max-width: 70%;
+    min-width: 10%;
+    float: right;
+    word-wrap: break-word;
+    clear: both;
+    animation: scaler 150ms ease-out;
+    font-weight: 500;
 }
 
-.userText span {
-    background-color: #009688;
-    max-width: 350px;
-    border-radius: 30px;
-    margin: 12px 14px;
-    width: inherit;
-    overflow-wrap: break-word;
-    padding: 7px 20px;
-    display: inline-block;
-    font-size: 15px;
-    word-spacing: 0.3px;
-    color: white;
-    text-align: start;
+.userText span:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: -10px;
+    top: 0;
+    width: 0;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: #98abb3 transparent;
+
 }
 
 .botText {
-    color: white;
-    font-family: monospace;
-    font-size: 17px;
-    text-align: left;
-    line-height: 30px;
-    margin: 5px;
+    background-color: #444;
+    font-size: .85em;
+    border-radius: 10px;
+    position: relative;
+    padding: 10px;
+    margin: 1% 0;
+    min-width: 10%;
+    word-wrap: break-word;
+    clear: both;
+    animation: scaler 150ms ease-out;
+    font-weight: 500;
+}
+
+.botText span:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 0;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: #444 transparent;
+
 }
 
 .botText span {
-    background-color: #ef5350;
-    max-width: 350px;
-    border-radius: 30px;
-    margin: 12px 14px;
-    width: inherit;
-    overflow-wrap: break-word;
-    padding: 7px 20px;
-    display: inline-block;
-    font-size: 15px;
-    word-spacing: 0.3px;
-    color: white;
-    text-align: start;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    font-weight: 500;
+
+
 }
 
 #tidbit {
@@ -183,4 +135,94 @@ h1 {
     bottom: 0;
     right: 0;
     width: 300px;
+}
+
+#pagewrap {
+    max-width: 360px;
+    margin: 3vh auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+#message {
+    width: 100%;
+}
+
+#message:before,
+#message:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+
+.reply {
+    padding: 15px 0;
+    background-color: #f5f8f9;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    box-shadow: 0 6px 30px rgba(34, 102, 180, 0.23);
+}
+
+.reply:before,
+.reply:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+input {
+    width: 72%;
+    padding: 10px;
+    border: none;
+    font-size: 1.2em;
+    background-color: inherit;
+}
+
+input:focus,
+button:focus {
+    outline: 0;
+}
+
+button {
+    background-color: #222;
+    color: #fff;
+    padding: 15px 10px;
+    width: 20%;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1.2px;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 0;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+@keyframes scaler {
+    0% {
+        transform: scale(0)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+#pagewrap {
+    max-width: 360px;
+    margin: 3vh auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
